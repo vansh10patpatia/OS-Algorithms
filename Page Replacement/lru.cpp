@@ -39,4 +39,4 @@ int main() {
         }
     }
     cout<<"Total faults : "<<faults;
-// }
+ }
