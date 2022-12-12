@@ -60,16 +60,29 @@ int main() {
             if(set.find(page) == set.end()) {
                 faults++;
                 set.insert(page);
+                dq.push_back(page);
+            } 
+            else {
+                for(auto it = dq.begin(); it != dq.end(); it++) {
+                    if(*it == page)
+                        dq.erase(it);
+                }
+                dq.push_back(page);
             }
-            dq.push_back(page);
         } else {
             if(set.find(page) == set.end()) {
                 faults++;
                 set.erase(dq.front());
                 dq.pop_front();
                 set.insert(page);
+                dq.push_back(page);
+            }else {
+                for(auto it = dq.begin(); it != dq.end(); it++) {
+                    if(*it == page)
+                        dq.erase(it);
+                }
+                dq.push_back(page);
             }
-            dq.push_back(page);
         }
     }
     cout<<"Total faults : "<<faults;
