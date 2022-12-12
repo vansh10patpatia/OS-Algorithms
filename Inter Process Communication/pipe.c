@@ -23,25 +23,3 @@ int main() {
         printf("Child process reading from parent process : %s\n",readMessages);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
