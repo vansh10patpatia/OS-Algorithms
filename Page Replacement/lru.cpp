@@ -41,7 +41,6 @@
 //     cout<<"Total faults : "<<faults;
 // }
 
-
 #include<iostream>
 #include<unordered_set>
 #include<queue>
@@ -76,7 +75,8 @@ int main() {
                 dq.pop_front();
                 set.insert(page);
                 dq.push_back(page);
-            }else {
+            }
+            else {
                 for(auto it = dq.begin(); it != dq.end(); it++) {
                     if(*it == page)
                         dq.erase(it);
